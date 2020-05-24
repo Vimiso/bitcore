@@ -99,7 +99,7 @@ datadir=/mnt/bitcoin_cash
 ~/.bitcoin-cash/bitcoin-abc-0.21.7/bin/bitcoind -conf=/root/.bitcoin-cash/bitcoin.conf -daemon
 ```
 
-## Monitor Storage:
+## Monitor Storage
 ```
 du -sh /var/lib/mongodb
 du -sh /mnt/bitcoin
