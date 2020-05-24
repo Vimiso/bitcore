@@ -111,6 +111,9 @@ du -sh /mnt/bitcoin_cash
 sudo apt install cron
 sudo systemctl enable cron
 crontab -e
+```
+
+```
 @reboot /root/.bitcoin/bitcoin-0.19.1/bin/bitcoind -daemon
 @reboot /root/.bitcoin-cash/bitcoin-abc-0.21.7/bin/bitcoind -conf=/root/.bitcoin-cash/bitcoin.conf -daemon
 @reboot cd /var/bitcore && forever start -c "npm run node" ./
