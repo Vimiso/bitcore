@@ -106,5 +106,18 @@ du -sh /mnt/bitcoin
 du -sh /mnt/bitcoin_cash
 ```
 
-## TODO
-* crontab `~/.bitcoin/bitcoin-0.19.1/bin/bitcoind -daemon`
+## Cron
+```
+sudo apt install cron
+sudo systemctl enable cron
+crontab -e
+@reboot /root/.bitcoin/bitcoin-0.19.1/bin/bitcoind -daemon
+@reboot /root/.bitcoin-cash/bitcoin-abc-0.21.7/bin/bitcoind -conf=/root/.bitcoin-cash/bitcoin.conf -daemon
+@reboot cd /var/bitcore && forever start -c "npm run node" ./
+*/10 * * * * /root/.bitcoin/bitcoin-0.19.1/bin/bitcoind -daemon
+*/10 * * * * /root/.bitcoin-cash/bitcoin-abc-0.21.7/bin/bitcoind -conf=/root/.bitcoin-cash/bitcoin.conf -daemon
+```
+
+```
+grep CRON /var/log/syslog
+```
