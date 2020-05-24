@@ -24,7 +24,7 @@ npm install forever -g
 ## Installing Bitcore
 ```
 cd /var
-git clone git@github.com:bitpay/bitcore.git
+git clone https://github.com/Vimiso/bitcore.git
 cd /var/bitcore
 git checkout master
 npm install --unsafe-perm
